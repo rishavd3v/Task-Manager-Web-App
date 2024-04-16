@@ -17,7 +17,7 @@ router.get('/loginPage', function(req, res, next) {
 });
 
 router.get('/profile', isLoggedIn, function(req, res, next) {
-  res.render('profile');
+  res.render('profile', {username: req.session.user.username});
 });
 
 module.exports = router;

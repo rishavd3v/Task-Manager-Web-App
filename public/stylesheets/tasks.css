@@ -11,15 +11,37 @@ p,h1,h2,h3,h4,h5,h6{
     padding: 0px;
     margin: 0px;
 }
-.navbar-expand-lg {
+/* .navbar-expand-lg {
     background-color: rgb(117, 58, 226);
     padding: 10px 200px;
     & img{
         aspect-ratio:1/0;
         width: 60px;
     }
-}
+} */
+.navbar{
+    background-color: rgba(0, 174, 255, 0.961);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* text-align: center; */
+    padding: 10px 50px;
+    height: 70px;
 
+}
+.nav-text{
+    & a{
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+}
+.profile{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+}
 .add-task-container{
     z-index: 9;
     background-image: url(../images/add-task-bg.jpg);

@@ -28,9 +28,12 @@ router.post("/signupAuth", async function(req, res) {
 
 
 router.post("/loginAuth",passport.authenticate("local", {
-  successRedirect: "/profile",
+  // successRedirect: "/",
   failureRedirect: "/loginPage?message=Wrong username or password"
-}),function(req,res){ });
+}),function(req,res){
+  req.session.user = req.user; // Save user data in the session
+  res.redirect("/");
+});
 
 router.get('/logout', function(req, res, next) {
   req.logout(function(err){
