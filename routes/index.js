@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/task',isLoggedIn,function(req, res, next) {
-  res.render('task');  
+  res.render('task');
 });
 
 router.get('/loginPage', function(req, res, next) {
