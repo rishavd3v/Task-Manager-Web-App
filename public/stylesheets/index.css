@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+  color: #fff;
+}
+h1,h2,h3,h4{
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+p{
+  font-size: initial;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-size: cover;
+
+  background-color: rgb(207, 207, 207);
+  margin: 0px;
+
+}
+
+.main-body{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0px;
+  text-align: center;
+  position: fixed;
+  
+}
+
+.nav button{
+  background: none;
+  border: none;
+  color: white;
+  font-size: medium;
+  letter-spacing: 0;
+  font-weight: 500;
+  margin: 0 40px;
+  
+}
+
+.list{
+  justify-content: space-between;
+  & button:hover{
+    cursor: pointer;
+  }
+}
+.list button::after{
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  /* background-color: #C499F3; */
+  background-color: #fcb228;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.list button:hover::after{
+  height: 2px;
+  transform: scale(1);
+}
+.user{
+  background-color: red;
+}
+.user button{
+  background-color: #0080ff;
+  /* padding: 8px 20px; */
+}
+.user button:hover{
+  background-color: #7360DF;
+}
+
+.hero{
+  height:100vh;
+  background-image:url(../images/hero.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.hero-text{
+  text-align: center;
+  width: 100vh;
+  margin: 60px 0 0 0;
+}
+.hero-text h2{
+  text-transform: uppercase;
+  margin: 0px;
+  font-size: 60px;
+  letter-spacing: 0px;
+}
+.hero-para{
+  padding: 20px 0px;
+}
+.hero-button{
+  margin: 60px 0 0 0;
+  & :hover{
+    cursor: pointer;
+  }
+}
+
+.hero-button button{
+  margin: 0 50px;
+  padding: 10px 10px;
+  border-radius: 20px;
+  width: 20%;
+  border: none;
+  background-color:#0080ff;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.49);
+}
+
+.hero-button button:hover{
+  background: #fcb228;
+}
