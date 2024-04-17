@@ -7,6 +7,7 @@ var expressSession = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const passport = require('passport');
+const MongoStore = require('connect-mongo');
 
 var app = express();
 
@@ -17,7 +18,9 @@ app.set('view engine', 'ejs');
 app.use(expressSession({
   resave: false,
   saveUninitialized: false,
-  secret: "hello hello"
+  secret: "hello hello",
+  cookie: { maxAge: 24 * 60 * 60 * 1000 },
+  store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/demodb' })
 }));
 app.use(passport.initialize());
 app.use(passport.session());

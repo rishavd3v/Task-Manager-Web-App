@@ -8,11 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/dashboard',function(req, res, next) {
+router.get('/dashboard',isLoggedIn,function(req, res, next) {
   res.render('task');
 });
 
-router.get('/loginPage', function(req, res, next) {
+router.get('/loginPage',function(req, res, next) {
   res.render('login');
 });
 
