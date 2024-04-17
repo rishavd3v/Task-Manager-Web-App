@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/task',isLoggedIn,function(req, res, next) {
+router.get('/dashboard',function(req, res, next) {
   res.render('task');
 });
 
