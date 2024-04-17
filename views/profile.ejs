@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/profile.css">
     <style>
         .name{
             text-transform: uppercase;
@@ -11,6 +12,24 @@
     </style>
 </head>
 <body>
-    <h1>Welcome, <span class="name"><%= username %></span></h1>
+    
+    <div class="profile-container">
+        <div class="profile">
+            <div class="profile-img">
+                <img src="images/blank-profile-picture-973460_1280.png" alt="">
+            </div>
+            <div class="profile-title">
+                <h3 class="Title"><%= username %></h3>
+            </div>
+            <div class="profile-desc">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, eveniet!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, est.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <button onclick="window.location.href='/'">Home</button>
+    <button onclick="window.location.href='/logout'">Logout</button>
 </body>
 </html>

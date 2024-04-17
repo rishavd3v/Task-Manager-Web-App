@@ -1,0 +1,31 @@
+.profile-container{
+    background-color: #6420cd;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    width: 35vh;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.profile-img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    & img{
+        border-radius: 50%;
+        width: 100%;
+    }
+}
+
+.profile-title{
+    text-transform: uppercase;
+}
+.profile{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
