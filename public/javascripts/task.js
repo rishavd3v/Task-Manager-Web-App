@@ -99,14 +99,6 @@ clearBtn.addEventListener('click', () => {
 });
 
 
-// nav highlight
-window.onload = function() {
-  let navlink = window.location.pathname;
-  let activeNav = document.querySelector(`a[href="${navlink}"]`);
-  activeNav.classList.add('active');
-}
-
-
 
 // fetching form data
 document.getElementById('taskForm').addEventListener('submit', function(e) {
@@ -122,6 +114,10 @@ document.getElementById('taskForm').addEventListener('submit', function(e) {
 
 // fetch data from backend
 window.onload = function(){
+  let navlink = window.location.pathname;
+  let activeNav = document.querySelector(`a[href="${navlink}"]`);
+  activeNav.classList.add('active');
+
   fetch(`/getTasks`)
   .then(response => response.json())
   .then(tasks => {
