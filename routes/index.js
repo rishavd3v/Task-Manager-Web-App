@@ -33,5 +33,16 @@ router.get('/tasks', (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
+router.get('/getTasks', (req, res) => {
+  const userId = req.session.user._id;
+
+  taskModel.find({ userId: userId })
+    .then(tasks => {
+      res.json(tasks);
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Error fetching tasks', error: err });
+    });
+});
 
 module.exports = router;

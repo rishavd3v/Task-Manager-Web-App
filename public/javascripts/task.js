@@ -52,7 +52,7 @@ addBtn.addEventListener("click",function(){
     status.appendChild(checkBtn);
     newTask.appendChild(status);
     deleteBtn.addEventListener("click",function(){
-      newTask.remove();
+      newTask.remove();  
     });
     checkBtn.addEventListener("click",()=>{
       newTask.classList.add("completed");
@@ -120,7 +120,79 @@ document.getElementById('taskForm').addEventListener('submit', function(e) {
   .catch((error) => console.error('Error:', error));
 });
 
+// fetch data from backend
+window.onload = function(){
+  fetch(`/getTasks`)
+  .then(response => response.json())
+  .then(tasks => {
+    tasks.forEach(task => {
+      // Display each task
+      displayTask(task);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+}
 
-window.onload = function() {
+
+// display task on reload
+function displayTask(task) {
+  var newTask = document.createElement("div");
+  newTask.classList.add("task");
+
+  let priority = document.createElement("div");
+  priority.classList.add("priority");
+  newTask.appendChild(priority);
+  priority.style.backgroundColor=selectedPriority;
   
+  let title = document.createElement("h4");
+  title.classList.add("title");
+  newTask.appendChild(title);
+  let title_value = task.title;
+  if(title_value==""){
+      title_value = "Title";
+  }
+  title.textContent = title_value;
+  
+  let desc = document.createElement("div");
+  desc.classList.add("desc");
+  let i1 = document.createElement("i"); 
+  i1.classList.add("bi-arrow-return-right"); 
+  let p1 = document.createElement("p");
+  desc.appendChild(i1);
+  desc.appendChild(p1);
+  newTask.appendChild(desc);
+  let desc_value = task.description;
+  p1.textContent = desc_value;
+
+
+  let date = document.createElement("div");
+  date.classList.add("date");
+  let i2 = document.createElement("i");
+  i2.classList.add("bi-calendar-check"); 
+  let p2 = document.createElement("p");
+  date.appendChild(i2);
+  date.appendChild(p2);
+  newTask.appendChild(date);
+  let date_value = new Date(task.date).toLocaleDateString("en-GB");
+  p2.textContent = date_value;
+  
+
+  let status = document.createElement("div");
+  status.classList.add("status");
+  let deleteBtn = document.createElement("i");
+  deleteBtn.classList.add("bi-trash-fill");
+  let checkBtn = document.createElement("i");
+  checkBtn.classList.add("bi-check-circle-fill");
+  status.appendChild(deleteBtn);
+  status.appendChild(checkBtn);
+  newTask.appendChild(status);
+  deleteBtn.addEventListener("click",function(){
+    newTask.remove();
+  });
+  checkBtn.addEventListener("click",()=>{
+    newTask.classList.add("completed");
+  });
+
+
+  document.getElementById("task-container").appendChild(newTask);
 }
