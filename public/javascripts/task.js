@@ -60,7 +60,7 @@ addBtn.addEventListener("click",function(){
 
 
     document.getElementById("task-container").appendChild(newTask);
-}); 
+});
 
 
 //priority select
@@ -99,9 +99,28 @@ clearBtn.addEventListener('click', () => {
 });
 
 
-// nav
+// nav highlight
 window.onload = function() {
   let navlink = window.location.pathname;
   let activeNav = document.querySelector(`a[href="${navlink}"]`);
   activeNav.classList.add('active');
+}
+
+
+
+// fetching form data
+document.getElementById('taskForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let params = new URLSearchParams(new FormData(this));
+
+  fetch('/tasks?' + params.toString())
+  .then(response => response.json())
+  .then(data => console.log('Success:', data))
+  .catch((error) => console.error('Error:', error));
+});
+
+
+window.onload = function() {
+  
 }

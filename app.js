@@ -6,6 +6,8 @@ var logger = require('morgan');
 var expressSession = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dataRouter = require('./routes/data');
+
 const passport = require('passport');
 const MongoStore = require('connect-mongo');
 
@@ -36,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', dataRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -21,7 +21,8 @@ router.post("/signupAuth", async function(req, res) {
     // If no existing user is found, register the new user
       await userModel.register(userData, req.body.password);
       passport.authenticate("local")(req, res, function() {
-        res.redirect("/task");  
+        req.session.user = req.user;
+        res.redirect("/dashboard");
       });
   }
 });

@@ -32,11 +32,13 @@
         <h4>Create Task</h4>
       </div>
       <div class="add-input">
-        <input type="text" placeholder="Title" id="title">
-        <input type="text" placeholder="Description" id="desc">
-        <input type="date" id="date">
-        <button id="addBtn">Add</button>
-        <button id="clearBtn">Clear</button>
+        <form action="" id="taskForm">
+          <input type="text" placeholder="Title" id="title" name="title">
+          <input type="text" placeholder="Description" id="desc" name="description">
+          <input type="date" id="date" name="date">
+          <button type="submit" id="addBtn">Add</button>
+          <button id="clearBtn">Clear</button>
+        </form>
       </div>
 
       <div class="add-priority">
