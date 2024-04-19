@@ -21,6 +21,7 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
   res.render('profile', {username: req.session.user.username, email:req.session.user.email});
 });
 
+// save task to db
 router.get('/tasks', (req, res) => {
   let newTask = new taskModel({
     userId: req.session.user._id,
@@ -33,6 +34,8 @@ router.get('/tasks', (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
+
+// display task from db
 router.get('/getTasks', (req, res) => {
   const userId = req.session.user._id;
 
@@ -44,5 +47,13 @@ router.get('/getTasks', (req, res) => {
       res.status(500).json({ message: 'Error fetching tasks', error: err });
     });
 });
+
+
+// delete task from db
+router.get('/deleteTask', async (req, res) => {
+  const title = req.query.title;
+  await taskModel.findOneAndDelete({ userId:req.session.user._id,title: title });
+});
+
 
 module.exports = router;

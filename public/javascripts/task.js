@@ -51,8 +51,10 @@ addBtn.addEventListener("click",function(){
     status.appendChild(deleteBtn);
     status.appendChild(checkBtn);
     newTask.appendChild(status);
-    deleteBtn.addEventListener("click",function(){
-      newTask.remove();  
+    deleteBtn.addEventListener("click",async function(){
+      // newTask.remove();
+      let taskTitle = title.textContent;
+      console.log(taskTitle);
     });
     checkBtn.addEventListener("click",()=>{
       newTask.classList.add("completed");
@@ -184,6 +186,9 @@ function displayTask(task) {
   newTask.appendChild(status);
   deleteBtn.addEventListener("click",function(){
     newTask.remove();
+    let taskTitle = title.textContent;
+    console.log(taskTitle);
+    fetch(`/deleteTask?title=${taskTitle}`);
   });
   checkBtn.addEventListener("click",()=>{
     newTask.classList.add("completed");
