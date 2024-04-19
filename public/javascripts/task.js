@@ -14,7 +14,7 @@ addBtn.addEventListener("click",function(){
     newTask.appendChild(title);
     let title_value = document.getElementById("title").value;
     if(title_value==""){
-        title_value = "Title";
+      title_value = "Title";
     }
     title.textContent = title_value;
     
@@ -187,7 +187,6 @@ function displayTask(task) {
   deleteBtn.addEventListener("click",function(){
     newTask.remove();
     let taskTitle = title.textContent;
-    console.log(taskTitle);
     fetch(`/deleteTask?title=${taskTitle}`);
   });
   checkBtn.addEventListener("click",()=>{
