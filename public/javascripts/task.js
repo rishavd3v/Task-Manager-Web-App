@@ -14,7 +14,7 @@ addBtn.addEventListener("click",function(){
     newTask.appendChild(title);
     let title_value = document.getElementById("title").value;
     if(title_value==""){
-      title_value = "Title";
+      return;
     }
     title.textContent = title_value;
     
@@ -52,7 +52,7 @@ addBtn.addEventListener("click",function(){
     status.appendChild(checkBtn);
     newTask.appendChild(status);
     deleteBtn.addEventListener("click",async function(){
-      // newTask.remove();
+      newTask.remove();
       let taskTitle = title.textContent;
       console.log(taskTitle);
     });
@@ -102,7 +102,7 @@ clearBtn.addEventListener('click', () => {
 
 
 
-// fetching form data
+// add task to db
 document.getElementById('taskForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
