@@ -30,7 +30,6 @@ router.get('/tasks', (req, res) => {
     date: req.query.date
   });
   newTask.save()
-    .then(task => res.json(task))
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
