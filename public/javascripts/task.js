@@ -194,7 +194,9 @@ function displayTask(task) {
     fetch(`/completeTask?title=${taskTitle}`);
     newTask.classList.add("completed")
   });
-
+  if(task.isCompleted==true){
+    newTask.classList.add("completed");
+  }
 
   document.getElementById("task-container").appendChild(newTask);
 }
