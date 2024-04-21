@@ -53,10 +53,10 @@ addBtn.addEventListener("click",function(){
     newTask.appendChild(status);
     deleteBtn.addEventListener("click",async function(){
       newTask.remove();
-      let taskTitle = title.textContent;
-      console.log(taskTitle);
     });
     checkBtn.addEventListener("click",()=>{
+      let taskTitle = title.textContent;
+      fetch(`/completeTask?title=${taskTitle}`);
       newTask.classList.add("completed");
     });
 
@@ -190,7 +190,9 @@ function displayTask(task) {
     fetch(`/deleteTask?title=${taskTitle}`);
   });
   checkBtn.addEventListener("click",()=>{
-    newTask.classList.add("completed");
+    let taskTitle = title.textContent;
+    fetch(`/completeTask?title=${taskTitle}`);
+    newTask.classList.add("completed")
   });
 
 

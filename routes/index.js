@@ -55,5 +55,10 @@ router.get('/deleteTask', async (req, res) => {
   await taskModel.findOneAndDelete({ userId:req.session.user._id,title: title });
 });
 
+//task completition status
+router.get("/completeTask", async (req, res) => {
+  const title = req.query.title;
+  await taskModel.findOneAndUpdate({ userId:req.session.user._id,title: title}, { isCompleted: true});
+});
 
 module.exports = router;

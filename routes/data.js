@@ -7,7 +7,9 @@ const taskSchema = mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     title: String,
     description: String,
-    date: Date
+    date: Date,
+    priority: String,
+    isCompleted: { type: Boolean, default: false }
 });
 
 
