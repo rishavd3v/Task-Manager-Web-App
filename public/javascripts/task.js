@@ -51,8 +51,10 @@ addBtn.addEventListener("click",function(){
     status.appendChild(deleteBtn);
     status.appendChild(checkBtn);
     newTask.appendChild(status);
-    deleteBtn.addEventListener("click",async function(){
+    deleteBtn.addEventListener("click",function(){
       newTask.remove();
+      let taskTitle = title.textContent;
+      fetch(`/deleteTask?title=${taskTitle}`);
     });
     checkBtn.addEventListener("click",()=>{
       let taskTitle = title.textContent;
