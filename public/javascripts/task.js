@@ -202,3 +202,31 @@ function displayTask(task) {
 
   document.getElementById("task-container").appendChild(newTask);
 }
+
+
+//search task
+
+const searchInput = document.getElementById('searchBox');
+const noResultDiv = document.getElementById('noResults');
+searchInput.addEventListener('input', filter);
+
+function filter() {
+  const tasks = document.querySelectorAll('.task');
+  const query = searchInput.value.toLowerCase();
+  let matching = false;
+  tasks.forEach((task) => {
+    const title = task.querySelector('.title').textContent.toLowerCase();
+    if (title.includes(query)) {
+      matching = true;
+      task.style.display = 'block';
+      } 
+      else {
+        task.style.display = 'none';
+      }
+    });
+  if (matching) {
+    noResultDiv.style.display = 'none';
+  } else {
+    noResultDiv.style.display = 'block';
+  }
+}
