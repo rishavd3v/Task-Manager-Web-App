@@ -60,4 +60,13 @@ router.get("/completeTask", async (req, res) => {
   await taskModel.findOneAndUpdate({ userId:req.session.user._id,title: title}, { isCompleted: true});
 });
 
+//isLoggedIn route
+router.get('/isLoggedIn', function(req, res) {
+  if(req.session.user){
+    res.json({isLoggedIn: true});
+  } else {
+    res.json({isLoggedIn: false});
+  }
+});
+
 module.exports = router;
