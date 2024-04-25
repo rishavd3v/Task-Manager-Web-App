@@ -205,11 +205,9 @@ function displayTask(task) {
 
 
 //search task
-
 const searchInput = document.getElementById('searchBox');
 const noResultDiv = document.getElementById('noResults');
 searchInput.addEventListener('input', filter);
-
 function filter() {
   const tasks = document.querySelectorAll('.task');
   const query = searchInput.value.toLowerCase();
