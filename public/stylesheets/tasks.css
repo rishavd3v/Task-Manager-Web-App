@@ -20,6 +20,12 @@ p,h1,h2,h3,h4,h5,h6{
     padding: 10px 50px;
     height: 70px;
 }
+.logo{
+    width: 10vw;
+    img{
+        width: 100%;
+    }
+}
 .nav-text{
     display: flex;
     gap: 30px;
