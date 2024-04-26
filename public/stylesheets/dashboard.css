@@ -1,3 +1,8 @@
+:root{
+    --primary-color: #b8dffd;
+    --secondary-color: #6420cd;
+    --tertiary-color: #4f4f4f;
+}
 *{
     font-family: 'montserrat';
     font-size: 14px;
@@ -79,16 +84,55 @@ p,h1,h2,h3,h4,h5,h6{
 
 
 .main-container{
-    margin: 0 80px;
+    margin: 0 150px;
 }
 
+
+.top-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 30px;
+    font-weight: 500;
+    text-transform:capitalize;
+}
+.weather-container{
+    display: flex;
+    align-items: center;
+    img{
+        padding: 0;
+        margin: 0;
+        width:100px;
+    }
+    .temp{
+        #cloud{
+            font-weight: 600;
+        }
+        #location{
+            font-weight: 600;
+        }
+    }
+}
+
+.user{
+    color: white;
+
+    .date{
+        font-size: 12px;
+    }
+    .name{
+        font-size: 17px;
+    }
+}
 .info-bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(186, 225, 255);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 7px;
+    margin-top: 30px;
     padding: 10px 0;
     & :last-child{
         border: none;
@@ -98,7 +142,16 @@ p,h1,h2,h3,h4,h5,h6{
 .info{
     text-align: center;
     border-right: solid rgba(105, 105, 105, 0.473) 2px;
-    padding: 0 120px;
+    padding: 0 110px;
+    .title{
+        margin: 5px;
+        font-size: 14px;
+        color: #606060;
+        font-weight: 600;
+    }
+    .num{
+        font-weight: 600;
+    }
 
 }
 .some-container{
@@ -114,7 +167,7 @@ p,h1,h2,h3,h4,h5,h6{
     height: 50vh;
     width: 60%;
     & div{
-        background-color: rgb(145, 197, 237);
+        background-color: var(--primary-color);
         height: 100%;
         width: 100%;
         border: none;
@@ -123,10 +176,9 @@ p,h1,h2,h3,h4,h5,h6{
     }
 }
 .right{
-    background-color: yellow;
     height: 50vh;
     width: 40%;
-    background-color: rgb(145, 197, 237);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 7px;
     padding: 10px 0;

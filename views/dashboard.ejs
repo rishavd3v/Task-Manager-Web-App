@@ -23,34 +23,57 @@
           </div>
           <div class="profile-container">
             <a href="/profile">
-              <div class="profile">
+              <!-- <div class="profile">
                 <img src="images/blank-profile-picture-973460_1280.png" alt="">
-              </div>
+              </div> -->
             </a>
           </div>
         </div>
     </nav>
 
     <div class="main-container">
-        <div class="info-bar">
+
+      <div class="top-container">
+        <div class="user">
+          <div class="date" id="date">
+          </div>
+          
+          <p class="name">Good morning <%= username %></p>
+        </div>
+
+        <div class="weather-container">
+          
+          <img src="/images/weather.webp" alt="">
+
+          <div class="temp">
+            <h3 class="cur-temp" id="curTemp"></h3>
+            <p id="cloud"></p>
+            <h6 id="location"></h6>
+          </div>
+
+        </div>
+      
+      </div>
+
+      <div class="info-bar">
             <div class="info">
                 <h5 class="title">Total Task</h5>
                 <h3 class="num">1750</h3>
             </div>
             <div class="info">
-                <h5 class="title">Total Task</h5>
-                <h3 class="num">1750</h3>
+                <h5 class="title">Due Task</h5>
+                <h3 class="num">530</h3>
             </div>
             <div class="info">
-                <h5 class="title">Total Task</h5>
-                <h3 class="num">1750</h3>
+                <h5 class="title">In progress</h5>
+                <h3 class="num">281</h3>
             </div>
             <div class="info">
-                <h5 class="title">Total Task</h5>
-                <h3 class="num">1750</h3>
+                <h5 class="title">Completed</h5>
+                <h3 class="num">160</h3>
             </div>
             
-        </div>
+      </div>
 
         <div class="some-container">
             <div class="left">
