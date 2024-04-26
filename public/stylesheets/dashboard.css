@@ -173,9 +173,15 @@ p,h1,h2,h3,h4,h5,h6{
         width: 100%;
         border: none;
         border-radius: 7px;
-        padding: 10px 0;
+        padding: 10px;
     }
 }
+.upcoming-task{
+    h5{
+        font-weight: 600;
+    }
+}
+
 .right{
     height: 50vh;
     width: 40%;
