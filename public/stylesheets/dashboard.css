@@ -2,6 +2,7 @@
     --primary-color: #b8dffd;
     --secondary-color: #6420cd;
     --tertiary-color: #4f4f4f;
+    --fc-today-bg-color:rgb(157, 212, 249);
 }
 *{
     font-family: 'montserrat';
@@ -193,9 +194,63 @@ p,h1,h2,h3,h4,h5,h6{
 
 .right{
     height: 50vh;
-    width: 40%;
-    background-color: var(--primary-color);
+    width: 30vw;
+    /* background-color: var(--primary-color); */
     border: none;
     border-radius: 7px;
-    padding: 10px 0;
+    /* padding: 10px; */
+}
+
+/* calender */
+.fc a{
+    text-decoration: none;
+    color: rgb(84, 84, 84);
+}
+.fc .fc-toolbar-title{
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.fc .fc-view-harness {
+    background-color: beige;
+    border-radius: 7px;
+    
+}
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 15px;
+}
+.fc-toolbar-chunk{
+    margin-right: 10px;
+}
+.fc-theme-standard td, .fc-theme-standard th{
+    border:none;
+}
+.fc-theme-standard .fc-scrollgrid {
+    border: none;
+}
+.fc .fc-col-header-cell-cushion {
+    color: black;
+}
+table, tr,td,th{
+    border: none;
+}
+.fc-header-toolbar {
+    background-color: beige;
+    padding: 8px;
+    border-radius: 7px;
+}
+.fc-view-harness .fc-view-harness-active{
+    border: solid black 1px;
+    border-radius: 7px;
+    padding: 10px;
+
+}
+.fc .fc-highlight{
+    background-color: rgb(255, 201, 201);
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+    min-height: 0.7em;
+}
+.fc .fc-daygrid-day-top{
+    justify-content: center;
 }

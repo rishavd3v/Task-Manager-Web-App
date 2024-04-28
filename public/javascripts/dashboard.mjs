@@ -5,6 +5,7 @@ window.onload = function(){
 
     //finction to display currecnt date
     getCurrentDate();
+    displayWeather();
 }
 
 
@@ -23,7 +24,7 @@ function getCurrentDate() {
 
 
 //weather
-async function displayWeather(city) {
+async function displayWeather() {
     const apiKey = '1ca43d06560445725ff14e55ebff4df4';
     const zip = '144001';
     const code = 'in'
@@ -37,7 +38,6 @@ async function displayWeather(city) {
     const curTemp = weatherData.main.temp; // temp in C.
     const location = weatherData.name;
     const cloud = weatherData.weather[0].main;
-    console.log(cloud);
 
     const locDiv = document.getElementById("location");
     const tempDiv = document.getElementById('curTemp');
@@ -46,8 +46,13 @@ async function displayWeather(city) {
     tempDiv.textContent = curTemp;
     locDiv.textContent = location;
     cloudDiv.textContent = cloud;
-    console.log(weatherData);
 }
 
-
-displayWeather('London'); // replace 'London' with your city
+document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar')
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      selectable: true,
+    })
+    calendar.render()
+})
