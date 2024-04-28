@@ -153,7 +153,7 @@ p,h1,h2,h3,h4,h5,h6{
 .info{
     text-align: center;
     border-right: solid rgba(105, 105, 105, 0.473) 2px;
-    padding: 0 110px;
+    padding: 0 90px;
     .title{
         margin: 5px;
         font-size: 14px;
