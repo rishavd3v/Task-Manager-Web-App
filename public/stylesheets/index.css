@@ -3,24 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'montserrat';
-  color: #fff;
+  /* color: #fff; */
 }
-h1,h2,h3,h4{
-  font-size: inherit;
+p,h1,h2,h3,h4{
   padding: 0;
   margin: 0;
 }
-p{
-  font-size: initial;
-  padding: 0;
-  margin: 0;
-}
-
 body{
   background-size: cover;
-
-  background-color: rgb(207, 207, 207);
   margin: 0px;
+  background-color: rgb(239, 239, 239);;
 
 }
 
@@ -36,7 +28,8 @@ body{
   align-items: center;
   padding: 25px 0px;
   text-align: center;
-  position: fixed;
+  position: absolute;
+  /* background-color: beige; */
   
 }
 
@@ -120,9 +113,84 @@ body{
   width: 20%;
   border: none;
   background-color:#0080ff;
+  color: white;
   box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.49);
 }
 
 .hero-button button:hover{
   background: #fcb228;
+}
+
+.sec2{
+  margin: 40px 15vw;
+  display: grid;
+  gap: 10px 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  
+  div{
+    height: 30vh;
+  }
+}
+
+.sub{
+  display: flex;
+  flex-direction: column;
+  p{
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+}
+.bi::before{
+  margin-bottom: 40px;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 5px;
+}
+.bi-check-lg::before{
+  background-color: rgb(221, 255, 228);
+  color: #007900;
+}
+.bi-database-lock::before{
+  background-color: #e1faff;
+  color: rgb(0, 133, 190);
+}
+
+
+
+.newsletter{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #00223d;
+  color: white;
+  padding: 100px 40px;
+
+
+  input{
+    padding: 10px 100px 10px 10px;
+    /* border-radius: 20px; */
+    border: none;
+    border-radius: 5px;
+  }
+  .newsletter-input{
+    display: flex;
+  }
+  button{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(25, 143, 253);
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin-left: 20px;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: #fcb228;
+  }
 }
