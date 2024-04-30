@@ -65,18 +65,19 @@
 
 
 
-  <section class="newsletter">
+  <section class="newsletter" id="newsletter">
     <div>
       <h2>Want product news and updates?</h2>
       <h2>Sign up for our newsletter.</h2>
     </div>
     <div>
       <div class="newsletter-input">
-        <form action="/newsletter">
-          <input type="email" placeholder="Enter your email">
+        <form id="letterForm" action="/addEmail">
+          <input type="email" placeholder="Enter your email" name="email" required>
           <button type="submit">Subscribe</button>
         </form>
       </div>
+      <p>Don't worry! We value your privacy.</p>
     </div>
   </section>
 

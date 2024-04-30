@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const nodemailer = require("nodemailer");
 const taskModel = require("./data");
+const letterModel = require("./newsletter");
 
 const { router: authRoutes, isLoggedIn } = require('./auth');
 router.use(authRoutes);
@@ -72,5 +74,48 @@ router.get('/isLoggedIn', function(req, res) {
     res.json({isLoggedIn: false});
   }
 });
+
+router.get("/addEmail", async (req, res) => {
+  let email = req.query.email;
+  let newEmail = new letterModel({
+    userId: req.session.user._id,
+    email: email
+  });
+  await newEmail.save()
+    .catch(err => res.status(500).json({ error: err.message }));
+  
+  sendMail(email);
+  res.redirect("/#newsletter");
+});
+
+
+// function to send mail
+function sendMail(email){
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    port: 465,
+    secure: true, // Use `true` for port 465, `false` for all other ports
+    auth: {
+      user: "mrx6794@gmail.com",
+      pass: "rvoj cetx nkxt xvij",
+    },
+  });
+
+    // send mail with defined transport object
+  const reciever = {
+    from: '"Rishav from TaskMaster" <mrx6794@gmail.com>',
+    to: email,
+    subject: "Hello",
+    text: "Welcome to TaskMaster Newsletter",
+  }
+  transporter.sendMail(reciever, (err)=>{
+    if(err){
+      console.log(err);
+    }
+    else console.log("Email sent");
+  });
+
+}
 
 module.exports = router;
