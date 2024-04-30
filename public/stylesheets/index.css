@@ -159,7 +159,14 @@ body{
   background-color: #e1faff;
   color: rgb(0, 133, 190);
 }
-
+.bi-people::before{
+  background-color: #f5e6fd;
+  color: #9322cf;
+}
+.bi-trello::before{
+  background-color: #fff0e0;
+  color: #fca03e;
+}
 
 footer{
   background-color: #00223d;
@@ -171,17 +178,18 @@ footer{
   align-items: center;
   /* background-color: #00223d; */
   color: white;
-  padding: 80px 40px;
+  padding: 80px 0;
 
 
+  .newsletter-input{
+    display: flex;
+  }
   input{
-    padding: 10px 100px 10px 10px;
+    width: 250px;
+    padding: 10px;
     border-radius: 20px;
     border: none;
     border-radius: 5px;
-  }
-  .newsletter-input{
-    display: flex;
   }
   button{
     border: none;
@@ -190,7 +198,7 @@ footer{
     color: white;
     font-weight: 600;
     padding: 5px 10px;
-    margin-left: 20px;
+    margin-left: 15px;
     height: 100%;
   }
   button:hover{
@@ -227,10 +235,9 @@ footer{
 }
 
 .line{
-  padding: 0px 150px;
-  hr{
-    background-color: rgb(255, 255, 255);
-  }
+  margin: 0px 150px;
+  background-color: rgb(128, 128, 128);
+  height: 1px;
 }
 
 .footer-text{

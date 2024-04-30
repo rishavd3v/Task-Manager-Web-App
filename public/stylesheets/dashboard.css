@@ -177,6 +177,11 @@ p,h1,h2,h3,h4,h5,h6{
     gap: 30px;
     height: 50vh;
     width: 60%;
+    h5{
+        font-weight: 600;
+        letter-spacing:-1px;
+        word-spacing: -1px;
+    }
     & div{
         background-color: var(--primary-color);
         height: 100%;
@@ -187,9 +192,7 @@ p,h1,h2,h3,h4,h5,h6{
     }
 }
 .upcoming-task{
-    h5{
-        font-weight: 600;
-    }
+
 }
 
 .right{
