@@ -129,11 +129,13 @@ p,h1,h2,h3,h4,h5,h6{
 .user{
     color: white;
 
-    .date{
-        font-size: 12px;
+    .date, .time{
+        color: rgb(199, 199, 199);
+        font-size: 13px;
     }
     .name{
-        font-size: 17px;
+        font-size: 18px;
+        font-weight:600;
     }
 }
 .info-bar{
@@ -191,8 +193,24 @@ p,h1,h2,h3,h4,h5,h6{
         padding: 10px;
     }
 }
-.upcoming-task{
 
+.teams{
+    table{
+        margin-top: 10px;    
+    }
+    th, td{
+        padding:5px 20px;
+        border-bottom: solid 1px;
+    }
+    th{
+        font-size: 13px;
+        font-weight: 500;
+        color: #4d4d4d;
+    }
+    td{
+        font-weight: 600;
+    
+    }
 }
 
 .right{

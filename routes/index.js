@@ -95,14 +95,14 @@ function sendMail(email){
   const transporter = nodemailer.createTransport({
     service: "gmail",
     port: 465,
-    secure: true, // Use `true` for port 465, `false` for all other ports
+    secure: true,
     auth: {
       user: "mrx6794@gmail.com",
       pass: "rvoj cetx nkxt xvij",
     },
   });
 
-    // send mail with defined transport object
+  
   const reciever = {
     from: '"Rishav from TaskMaster" <mrx6794@gmail.com>',
     to: email,
