@@ -167,6 +167,27 @@ body{
   background-color: #fff0e0;
   color: #fca03e;
 }
+.grid-container{
+  margin: 40px 15vw;
+  display: grid;
+  /* background-color: white; */
+  padding: 20px;
+  border-radius: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  .grid-item{
+    padding: 20px;
+    background-color: red;
+    height: 30vh;
+  }
+  h3{
+    margin-bottom: 10px;
+  }
+  .bi::before{
+    margin-bottom: 20px;
+  }
+}
+
 
 footer{
   background-color: #00223d;

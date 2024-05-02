@@ -194,7 +194,7 @@ p,h1,h2,h3,h4,h5,h6{
     }
 }
 
-.teams{
+.teams, .upcoming-task{
     table{
         margin-top: 10px;    
     }
